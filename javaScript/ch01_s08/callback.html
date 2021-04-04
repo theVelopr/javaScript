@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+        // callback function example
+
+        function test (num, callback) {
+            console.log(num);
+            callback();
+        }
+
+        test (1, function() {
+            console.log ("running callback function.")
+        })
+
+        // closer function
+        // usage : pagenation, or something for adding up 
+        function ex_cl(){
+            var num = 0;
+            return function() {
+                num++;
+                console.log(num);
+            }
+        }
+
+        var test = ex_cl();
+        test(); // 1
+        test(); // 2
+    </script> 
+    
+</body>
+</html>

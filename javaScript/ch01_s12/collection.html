@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Collection</title>
+</head>
+<body>
+    <script>
+
+        // Map
+        const numbers = [1,2,3,5,4];
+
+        const cities = [
+            { name : 'daegu', count : 2}, 
+            { name : 'seoul', count : 1}, 
+            { name : 'busan', count : 20}
+        ]
+
+        // Map
+        const num = numbers.map ( (x) => {
+            return x * 10
+        }) 
+        console.log(num) // [10,20,30,40,50]
+
+        // Old style
+        // const num = cities.map ( (x) => {
+        //     return x.count * 10
+        // }) 
+        
+        const num = cities.map( (x) => x.count *  10)
+        console.log(num) // [20,10,200] 배열구조로 리턴해줌
+
+        // Filter
+        const num = numbers.filter( (x) => x < 4) // [1,2,3]
+        const num = cities.filter((x) => x.name == 'seoul' ) // 0: { name : 'seoul', count : 1}
+        const num = cities.filter((x) => x.count < 10) // 위와 비슷한데, 대구(먼저), 서울(마지막) 출력함.
+
+        // sort 
+        // 정확하게 이해 안되었으니 추후에 다시 확인하기
+        numbers.sort(); // 이걸로 이미 정리가 되지만 찍어보기위해서 아래 방식을 사용해보면
+        console.log(numbers.sort()); // [1,2,3,4,5] 로 출력됨 (오름차순이 Default)
+
+        const num = numbers.sort ((x, y) => {
+            console.log('x는 ${x}') // 2 3 5 4 4
+            console.log('y는 ${y}') // 1 2 3 5 3
+            console.log('---------------------')
+            
+            if (x>y) {
+                return 1;
+            } else {
+                return -1;
+            }
+        })
+
+        console.log(num); // [1,2,3,4,5]
+
+        const num = cities.sort((x, y) => x.count - y.count)
+        console.log(num); // 오름차순으로 서울 대구 부산 으로 정렬되서 출력됨. 
+
+
+        // reduce
+        // acc(accumulate)
+        // Explaination wasn't sufficient.
+
+
+        // This code will be manipulated by reduce
+        let acc = 0;
+        for(let i=0; i<numbers.length; i++) {
+            acc = acc + numbers[i];
+        }
+        console.log(acc); 
+        
+        const num = numbers.reduce((acc, current) => {
+            return acc + current;
+        })
+
+    </script>
+</body>
+</html>

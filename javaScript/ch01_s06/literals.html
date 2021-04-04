@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literal Object</title>
+</head>
+<body>
+    <script>
+        // example of making 'literal object'
+        var a = {
+            'a' : 110,
+            'b' : 'hello',
+            'c' : function() {
+                console.log('gggg')
+            }
+        }
+
+        // Although it doesn't have the object making part, it is making the new object.
+        // because it is skipped as below.
+        // var a = new Object() // <- this part is skipped
+
+        // ## In case of defining which is the object or other type, you can check with this as shown below.
+        console.log(typeof a);
+        
+        Object.prototype.sum = function () {
+            console.log(this.a + 20);
+        }
+        a.sum();
+    </script>
+</body>
+</html>

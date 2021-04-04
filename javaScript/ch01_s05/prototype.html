@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+        // prototype
+        function Car(a, b) { // <- This is the prototype base created object
+            this.name = a; // this is a common variable
+            this.color = b;
+        }
+        Car.prototype.move = function () {
+            console.log("The brand name is " + this.name + " and " + "color of the car is " + this.color);
+        }
+
+        var a = new Car ("Hyundai", "Yellow")
+        a.move();
+        // you can add someting when you access through prototype
+
+
+        // another example with Array
+        var b = [1, 2, 3, 4 ,10];
+        Array.prototype.print = function() {
+            for(var i = 0; i < this.length; i++) {
+                console.log(b)
+            }
+        }
+        b.print();
+
+
+    </script>
+</body>
+</html>

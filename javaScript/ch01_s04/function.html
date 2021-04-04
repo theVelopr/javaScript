@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        // function declaration
+        function test(a) {
+            console.log(a)
+        }
+        test("10")
+
+
+        function test (a, b) {
+            console.log("a는 " + a)
+            console.log("b는 " + b)
+        }
+        test(11, "haha")
+        ////////////////////////////////////////////
+
+
+        // input & output 둘 다 있는 함수
+        function sum (a, b) {
+            return a + b;
+        }
+        var c = sum (10, 20);
+        console.log(c);
+        ////////////////////////////////////////////
+
+
+        // input은 있지만 output이 없는 함수
+        function sum () {
+            return "Did you call 'sum' function? ha?";
+        }
+        var c = sum ();
+        console.log(c);
+        ////////////////////////////////////////////
+
+
+        // input & output 둘 다 없는 함수
+        function sum () {
+            return "Did you call 'sum' function? haha?";
+        }
+        var c = sum ();
+        ////////////////////////////////////////////
+
+
+        // 다른 방법 1
+        var sum = function () {
+            console.log("Did you call 'sum' function? hahaha?" );
+        }
+        var c = sum();
+        ////////////////////////////////////////////
+
+
+        // 다른 방법 2
+        var sum2 = function(c, d) {
+            return c + d;
+        }
+        var c2 = sum2(1, 2);
+        console.log(c2)
+        ////////////////////////////////////////////
+
+
+        // 참조형 기본
+        function Car(a, b) {
+            this.name = a;
+            this.color = b;
+        }
+
+        var a = new Car ("Hyundai", "Yellow")
+        console.log(a.name);
+        console.log(a.color);
+
+        var b = new Car ("Kia", "White")
+        console.log(b.name);
+        console.log(b.color);
+        ////////////////////////////////////////////
+
+        // 
+        function Car(a, b, c) {
+            this.name = a; // this is a common variable
+            this.color = b;
+            var move = c; // this is local variable
+        }
+
+        var a = new Car ("Hyundai", "Yellow", "Forward")
+        console.log(a.name);
+        console.log(a.color);
+        console.log(c.move); // undefined
+
+
+ 
+    </script>  
+</body>
+</html>

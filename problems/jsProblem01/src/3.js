@@ -8,5 +8,5 @@ const programming = [
 
 console.log(
   // filter 함수를 완성해주세요.
-  programming.filter()
+programming.filter((x) => x < 5)
 );

@@ -10,49 +10,55 @@
 haha
 <script>
     // 하이 브라우저를 커버하려면 babel을 써야한다. (?)
-// class Car {
+class Car {
 
-//     constructor(a, b) {
-//         this.name = a;
-//         this.color = n;
-//     }
+    constructor(name, color) {
+        this.name = name;
+        this.color = color;
+    }
 
-//     move() {
+    move() {
+        Car.prototype.move = function() {
+        console.log(this.name+"이고 " + this.color+"입니다.")
+    }
+}
+}
+var a = new Car( "현대" , "노란"  )
+a.move()
+var b = new Car( "기아" , "빨강"  )
+b.move()
 
-//     }
+// Car.prototype.move = function() {
+//     console.log(this.name+"이고 " + this.color+"입니다.")
 // }
-// var a = new Car( "현대" , "노란"  )
-// a.move()
-// var b = new Car( "기아" , "빨강"  )
-// b.move()
 
 // es6 grammar
 
-const a = 10;
-let b = 1;
-if (true) { // let을 사용하게 되면 블럭 안의 값이 우선적으로 실행되게 됨
-    let b =2 ;
-    console.log(b);
-}
-console.log(b);
+// const a = 10;
+// let b = 1;
+// if (true) { // let을 사용하게 되면 블럭 안의 값이 우선적으로 실행되게 됨
+//     let b =2 ;
+//     console.log(b);
+// }
+// console.log(b);
 
-// template Variable
-const arr = 'hello';
-console.log('arr 은 ' + arr); // 이걸 더 간소화 시켜서 
-console.log('arr 은 ${arr}'); // 이렇게 만듬.
+// // template Variable
+// const arr = 'hello';
+// console.log('arr 은 ' + arr); // 이걸 더 간소화 시켜서 
+// console.log('arr 은 ${arr}'); // 이렇게 만듬.
 
-// Arrow Function
-var func1 = function(a, b) {
-    return a+b;
-} // 이렇게 구현하던걸
+// // Arrow Function
+// var func1 = function(a, b) {
+//     return a+b;
+// } // 이렇게 구현하던걸
 
-// this를 바인딩한다는 개념
-const func1 = (a, b) => a + b; // 이렇게 구현
-console.log(func1(1, 2));
+// // this를 바인딩한다는 개념
+// const func1 = (a, b) => a + b; // 이렇게 구현
+// console.log(func1(1, 2));
 
-// designation of values on variable
-const [d,e,f] = [1,2,3];
-console.log(e); // 2
+// // designation of values on variable
+// const [d,e,f] = [1,2,3];
+// console.log(e); // 2
 
 // spread operator
 // const arr1 = [1,2]
@@ -67,10 +73,10 @@ console.log(e); // 2
 // abc('nodejs', 'hello', 1);
 
 
-function abc(a, ...b) {
-    console.log(b[0]) // hello
-}
-abc('nodejs', 'hello', 1);
+// function abc(a, ...b) {
+//     console.log(b[0]) // hello
+// }
+// abc('nodejs', 'hello', 1);
 
 
 

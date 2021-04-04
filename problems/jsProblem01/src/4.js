@@ -7,9 +7,25 @@
   기아차이고 빨간색입니다.
 */
 
-class Car {}
+class Car {
+  constractor (name, color) {
+    this.name = name;
+    this.color = color;
+  }
 
-var a = new Car("현대", "노란");
-a.move();
-var b = new Car("기아", "빨간");
-b.move();
+  move() {
+    Car.prototype.move = function() {
+    console.log(this.name+"이고 " + this.color+"입니다.")
+  }
+
+  var a = new Car("현대", "노란");
+  a.move();
+
+  move() {
+    Car.prototype.move = function() {
+    console.log(this.name+"이고 " + this.color+"입니다.")
+  }
+  }
+  var b = new Car("기아", "빨간");
+  b.move();
+
